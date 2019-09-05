@@ -23,6 +23,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var comicTextFieldOutlet: UITextField!
     
     
+    @IBAction func mostRecentComicButton(_ sender: UIButton) {
+    }
+    @IBAction func randomComicButton(_ sender: UIButton) {
+    }
     
     @IBAction func changeComicStepper(_ sender: UIStepper) {
 //        xkcd.
