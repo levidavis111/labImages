@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var changeComicStepperOutlet: UIStepper!
     
     @IBAction func mostRecentComicButton(_ sender: UIButton) {
+        loadData()
+        
     }
     @IBAction func randomComicButton(_ sender: UIButton) {
         
