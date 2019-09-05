@@ -9,7 +9,12 @@
 import UIKit
 
 class PokemonViewController: UIViewController {
-
+    
+    var pokemons = [Poke.Pokemon]() {
+        didSet {
+            pokeTableView.reloadData()
+        }
+    }
     
     @IBOutlet weak var pokeTableView: UITableView!
     @IBOutlet weak var pokeSearchBar: UISearchBar!
@@ -20,29 +25,38 @@ class PokemonViewController: UIViewController {
         pokeTableView.delegate = self
         pokeTableView.dataSource = self
         pokeSearchBar.delegate = self
+        loadData()
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func loadData() {
+        Poke.getPokeData { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let poke):
+                    self.pokemons = poke
+                }
+            }
+        }
     }
-    */
 
 }
 
 extension PokemonViewController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return pokemons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let onePoke = pokemons[indexPath.row]
+        let cell = pokeTableView.dequeueReusableCell(withIdentifier: "pokeCell", for: indexPath)
+        
+        cell.textLabel?.text = onePoke.name
+        
+        return cell
     }
     
     

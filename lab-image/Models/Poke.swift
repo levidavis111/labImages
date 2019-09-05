@@ -14,9 +14,11 @@ struct Poke:Codable {
     struct Pokemon: Codable {
         let name: String
         let imageUrlHiRes: String
-        let types: [String]
-        let weaknesses: [WeaknessWrapper]
+        let types: [String]?
+        let weaknesses: [WeaknessWrapper]?
         let set: String
+        
+
         
         struct WeaknessWrapper: Codable {
             let type: String
@@ -32,10 +34,11 @@ struct Poke:Codable {
                 completionHandler(.failure(error))
             case .success(let data):
                 do {
-                    let pokeResult = try JSONDecoder().decode([Pokemon].self, from: data)
+                    let pokeResult = try JSONDecoder().decode(Poke.self, from: data)
                     
-                    completionHandler(.success(pokeResult))
+                    completionHandler(.success(pokeResult.cards))
                 } catch {
+                    print(error)
                     completionHandler(.failure(.badJSONError))
                 }
             }
