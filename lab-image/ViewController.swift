@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var xkcd: XKCD? {
         didSet {
-            loadData()
+          
             setupDisplays()
         }
     }
@@ -23,7 +23,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var comicTextFieldOutlet: UITextField!
     
     
-    @IBOutlet weak var changeComicStepper: UIStepper!
+    
+    @IBAction func changeComicStepper(_ sender: UIStepper) {
+//        xkcd.
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +50,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    private func loadImage() {
+        ImageHelper.shared.fetchImage(urlString: xkcd?.img ?? "") { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let image):
+                    self.comicImageView.image = image
+                }
+            }
+        }
+    }
+    
     private func setupDisplays() {
         guard xkcd != nil else {return}
-        comicNumberLabel.text = "\(xkcd?.num ?? 0)"
-        
+        comicNumberLabel.text = "XKCD# \(xkcd?.num ?? 0)"
+        loadImage()
     }
 
 }

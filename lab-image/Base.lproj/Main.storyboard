@@ -31,6 +31,9 @@
                                     <constraint firstAttribute="width" constant="94" id="280-ul-FMO"/>
                                     <constraint firstAttribute="height" constant="29" id="r9A-sm-ZQj"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="changeComicStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="Twr-AE-IAQ"/>
+                                </connections>
                             </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRZ-nD-lgT">
                                 <rect key="frame" x="157" y="667" width="100" height="30"/>
@@ -53,10 +56,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XKCD#" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwj-7d-bBQ">
-                                <rect key="frame" x="158.5" y="69" width="97" height="21"/>
+                                <rect key="frame" x="107" y="69" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aG3-Ew-Hpy"/>
-                                    <constraint firstAttribute="width" constant="97" id="vMQ-wB-GGX"/>
+                                    <constraint firstAttribute="width" constant="200" id="vMQ-wB-GGX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -80,7 +83,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="changeComicStepper" destination="j6W-17-0vi" id="9wc-kF-hf6"/>
                         <outlet property="comicImageView" destination="6uT-Vw-Mfh" id="ksi-ED-HHT"/>
                         <outlet property="comicNumberLabel" destination="bwj-7d-bBQ" id="Iz3-L7-rnc"/>
                         <outlet property="comicTextFieldOutlet" destination="YRZ-nD-lgT" id="Hq1-oe-28W"/>
