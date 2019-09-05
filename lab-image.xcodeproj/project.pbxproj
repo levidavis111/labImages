@@ -18,6 +18,7 @@
 		FC3B317823218E2700FA66F0 /* XKCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317723218E2700FA66F0 /* XKCD.swift */; };
 		FC3B317B2321A65E00FA66F0 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317A2321A65E00FA66F0 /* PokemonViewController.swift */; };
 		FC3B317D2321A66D00FA66F0 /* RandomDudeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317C2321A66D00FA66F0 /* RandomDudeViewController.swift */; };
+		FC3B31812321B44100FA66F0 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31802321B44000FA66F0 /* Poke.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FC3B317723218E2700FA66F0 /* XKCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XKCD.swift; sourceTree = "<group>"; };
 		FC3B317A2321A65E00FA66F0 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		FC3B317C2321A66D00FA66F0 /* RandomDudeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDudeViewController.swift; sourceTree = "<group>"; };
+		FC3B31802321B44000FA66F0 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				FC3B317723218E2700FA66F0 /* XKCD.swift */,
+				FC3B31802321B44000FA66F0 /* Poke.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				FC3B317823218E2700FA66F0 /* XKCD.swift in Sources */,
 				FC3B317523218C6100FA66F0 /* ImageHelper.swift in Sources */,
 				FC3B317D2321A66D00FA66F0 /* RandomDudeViewController.swift in Sources */,
+				FC3B31812321B44100FA66F0 /* Poke.swift in Sources */,
 				FC3B317B2321A65E00FA66F0 /* PokemonViewController.swift in Sources */,
 				FC3B317123218BF100FA66F0 /* NetworkManager.swift in Sources */,
 				FC3B31612321894C00FA66F0 /* ViewController.swift in Sources */,
