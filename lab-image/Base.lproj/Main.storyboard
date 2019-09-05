@@ -82,6 +82,10 @@
                         <viewLayoutGuide key="safeArea" id="gNF-YB-Avt"/>
                     </view>
                     <navigationItem key="navigationItem" id="dE9-g6-hvZ"/>
+                    <connections>
+                        <outlet property="pokeSearchBar" destination="Rnu-be-hvz" id="g9o-E8-6YD"/>
+                        <outlet property="pokeTableView" destination="Mpp-3H-cB6" id="D8b-eD-bWD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1PF-he-BZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
