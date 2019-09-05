@@ -12,8 +12,15 @@ struct XKCD: Codable {
     let num: Int
     let img: String
     
-    static func getXKCDData(completionHandler: @escaping (Result<XKCD,AppError>) -> () ) {
-       let url = "http://xkcd.com/info.0.json"
+    static func getXKCDData(comicNum: Int?, completionHandler: @escaping (Result<XKCD,AppError>) -> () ) {
+       
+        var url = "http://xkcd.com/info.0.json"
+       
+        if let comicNum = comicNum {
+            url = "http://xkcd.com/\(comicNum)/info.0.json"
+        }
+        
+        
         NetworkManager.shared.fetchData(urlString: url) { (result) in
             switch result {
             case .failure(let error):

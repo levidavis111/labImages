@@ -16,6 +16,8 @@
 		FC3B317323218C3100FA66F0 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317223218C3100FA66F0 /* AppError.swift */; };
 		FC3B317523218C6100FA66F0 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317423218C6100FA66F0 /* ImageHelper.swift */; };
 		FC3B317823218E2700FA66F0 /* XKCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317723218E2700FA66F0 /* XKCD.swift */; };
+		FC3B317B2321A65E00FA66F0 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317A2321A65E00FA66F0 /* PokemonViewController.swift */; };
+		FC3B317D2321A66D00FA66F0 /* RandomDudeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317C2321A66D00FA66F0 /* RandomDudeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		FC3B317223218C3100FA66F0 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		FC3B317423218C6100FA66F0 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		FC3B317723218E2700FA66F0 /* XKCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XKCD.swift; sourceTree = "<group>"; };
+		FC3B317A2321A65E00FA66F0 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
+		FC3B317C2321A66D00FA66F0 /* RandomDudeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDudeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +68,9 @@
 			children = (
 				FC3B317623218C8500FA66F0 /* Newtwork Tools */,
 				FC3B317923218E2B00FA66F0 /* Models */,
-				FC3B315E2321894C00FA66F0 /* AppDelegate.swift */,
-				FC3B31602321894C00FA66F0 /* ViewController.swift */,
+				FC3B317E2321A67A00FA66F0 /* View Controllers */,
+				FC3B317F2321A69600FA66F0 /* Supporting Files */,
 				FC3B31622321894C00FA66F0 /* Main.storyboard */,
-				FC3B31652321895000FA66F0 /* Assets.xcassets */,
-				FC3B31672321895000FA66F0 /* LaunchScreen.storyboard */,
 				FC3B316A2321895000FA66F0 /* Info.plist */,
 			);
 			path = "lab-image";
@@ -90,6 +92,26 @@
 				FC3B317723218E2700FA66F0 /* XKCD.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FC3B317E2321A67A00FA66F0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B31602321894C00FA66F0 /* ViewController.swift */,
+				FC3B317A2321A65E00FA66F0 /* PokemonViewController.swift */,
+				FC3B317C2321A66D00FA66F0 /* RandomDudeViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FC3B317F2321A69600FA66F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B315E2321894C00FA66F0 /* AppDelegate.swift */,
+				FC3B31652321895000FA66F0 /* Assets.xcassets */,
+				FC3B31672321895000FA66F0 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +188,8 @@
 				FC3B317323218C3100FA66F0 /* AppError.swift in Sources */,
 				FC3B317823218E2700FA66F0 /* XKCD.swift in Sources */,
 				FC3B317523218C6100FA66F0 /* ImageHelper.swift in Sources */,
+				FC3B317D2321A66D00FA66F0 /* RandomDudeViewController.swift in Sources */,
+				FC3B317B2321A65E00FA66F0 /* PokemonViewController.swift in Sources */,
 				FC3B317123218BF100FA66F0 /* NetworkManager.swift in Sources */,
 				FC3B31612321894C00FA66F0 /* ViewController.swift in Sources */,
 				FC3B315F2321894C00FA66F0 /* AppDelegate.swift in Sources */,

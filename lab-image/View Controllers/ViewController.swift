@@ -12,8 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var xkcd: XKCD? {
         didSet {
-          
-            setupDisplays()
+          setupDisplays()
         }
     }
 
@@ -22,26 +21,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var comicImageView: UIImageView!
     @IBOutlet weak var comicTextFieldOutlet: UITextField!
     
+    @IBOutlet weak var changeComicStepperOutlet: UIStepper!
     
     @IBAction func mostRecentComicButton(_ sender: UIButton) {
     }
     @IBAction func randomComicButton(_ sender: UIButton) {
+        
+        loadCustomData(sender: Int.random(in: 1...2200))
+        
+        
     }
     
     @IBAction func changeComicStepper(_ sender: UIStepper) {
-//        xkcd.
+        loadCustomData(sender: Int(sender.value))
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         comicTextFieldOutlet.delegate = self
         loadData()
-        setupDisplays()
         // Do any additional setup after loading the view.
     }
     
     private func loadData() {
-        XKCD.getXKCDData { (result) in
+        XKCD.getXKCDData(comicNum: nil) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
@@ -68,9 +72,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupDisplays() {
-        guard xkcd != nil else {return}
         comicNumberLabel.text = "XKCD# \(xkcd?.num ?? 0)"
         loadImage()
+    }
+    
+    private func loadCustomData(sender: Int) {
+        XKCD.getXKCDData(comicNum: sender) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let XKCD):
+                    self.xkcd = XKCD
+                    
+                }
+            }
+        }
+    }
+    
+    private func setStepperValue(int: Int) {
+        changeComicStepperOutlet.value = Double(int)
     }
 
 }
