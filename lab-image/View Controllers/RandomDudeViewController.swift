@@ -9,36 +9,73 @@
 import UIKit
 
 class RandomDudeViewController: UIViewController {
+    
+    var randomDudes = [RandomDude]() {
+        didSet {
+            randomDudeTableView.reloadData()
+        }
+    }
+    
     @IBOutlet weak var randomDudeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        randomDudeTableView.delegate = self
+        randomDudeTableView.dataSource = self
+        loadData()
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func loadData() {
+        RandomDudeWrapper.getRandomDudeData { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let randomDudes):
+                    self.randomDudes = randomDudes
+                }
+            }
+        }
     }
-    */
 
 }
 
 extension RandomDudeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return randomDudes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let oneRandomDude = randomDudes[indexPath.row]
+        if let cell = randomDudeTableView.dequeueReusableCell(withIdentifier: "randomDudeCell", for: indexPath) as? RandomDudeTableViewCell {
+            
+            ImageHelper.shared.fetchImage(urlString: oneRandomDude.picture.thumbnail) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let image):
+                        cell.randomDudeCellImage.image = image
+                        
+                    }
+                }
+            }
+            
+            cell.randomDudeCellNameLabel.text = oneRandomDude.fullName
+            cell.randomDudeCellAgeLabel.text = "Age: \(oneRandomDude.dob.age)"
+            cell.randomDudeCellMobilePhoneLabel.text = "Cell: \(oneRandomDude.cell)"
+            
+            return cell
+        }
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
     
 }
+

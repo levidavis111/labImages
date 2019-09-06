@@ -11,16 +11,39 @@ import Foundation
 struct RandomDudeWrapper: Codable {
     let results: [RandomDude]
     
-    struct RandomDude: Codable {
-        let name: [NameWrapper]
-        let dob: [AgeWrapper]
+    static func getRandomDudeData(completionHandler: @escaping (Result<[RandomDude],AppError>) -> () ) {
+        let url = "https://randomuser.me/api/?results=50"
+        NetworkManager.shared.fetchData(urlString: url) { (result) in
+            switch result {
+            case .failure(let error):
+                completionHandler(.failure(error))
+            case .success(let data):
+                do {
+                    let randomDudeResult = try JSONDecoder().decode(RandomDudeWrapper.self, from: data)
+                    completionHandler(.success(randomDudeResult.results))
+                } catch {
+                    completionHandler(.failure(.badJSONError))
+                }
+            }
+        }
+    }
+
+}
+
+struct RandomDude: Codable {
+//    let results: [RandomDude]
+    
+   
+        let name: NameWrapper
+        let dob: AgeWrapper
         let cell: String
+    let picture: PictureWrapper
         var fullName: String {get {
             return "\(String(describing: name.first)) \(String(describing: name.last))"
             }
         }
         
-    }
+    
     
     struct NameWrapper: Codable {
         let first: String
@@ -30,4 +53,9 @@ struct RandomDudeWrapper: Codable {
     struct AgeWrapper: Codable {
         let age: Int
     }
+    
+    struct PictureWrapper: Codable {
+        let thumbnail: String
+    }
+    
 }
