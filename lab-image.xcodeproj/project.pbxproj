@@ -19,6 +19,9 @@
 		FC3B317B2321A65E00FA66F0 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317A2321A65E00FA66F0 /* PokemonViewController.swift */; };
 		FC3B317D2321A66D00FA66F0 /* RandomDudeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B317C2321A66D00FA66F0 /* RandomDudeViewController.swift */; };
 		FC3B31812321B44100FA66F0 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31802321B44000FA66F0 /* Poke.swift */; };
+		FC3B31AA2322E46200FA66F0 /* PokeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31A92322E46100FA66F0 /* PokeDetailViewController.swift */; };
+		FC3B31AD2322EF1000FA66F0 /* RandomDude.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31AC2322EF1000FA66F0 /* RandomDude.swift */; };
+		FC3B31AF2322F22B00FA66F0 /* RandomDudeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31AE2322F22B00FA66F0 /* RandomDudeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		FC3B317A2321A65E00FA66F0 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		FC3B317C2321A66D00FA66F0 /* RandomDudeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDudeViewController.swift; sourceTree = "<group>"; };
 		FC3B31802321B44000FA66F0 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
+		FC3B31A92322E46100FA66F0 /* PokeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDetailViewController.swift; sourceTree = "<group>"; };
+		FC3B31AC2322EF1000FA66F0 /* RandomDude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDude.swift; sourceTree = "<group>"; };
+		FC3B31AE2322F22B00FA66F0 /* RandomDudeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDudeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +76,10 @@
 			children = (
 				FC3B317623218C8500FA66F0 /* Newtwork Tools */,
 				FC3B317923218E2B00FA66F0 /* Models */,
+				FC3B31AB2322E46500FA66F0 /* Detail View Controllers */,
 				FC3B317E2321A67A00FA66F0 /* View Controllers */,
 				FC3B317F2321A69600FA66F0 /* Supporting Files */,
+				FC3B31B02322F23100FA66F0 /* Custom Cells */,
 				FC3B31622321894C00FA66F0 /* Main.storyboard */,
 				FC3B316A2321895000FA66F0 /* Info.plist */,
 			);
@@ -93,6 +101,7 @@
 			children = (
 				FC3B317723218E2700FA66F0 /* XKCD.swift */,
 				FC3B31802321B44000FA66F0 /* Poke.swift */,
+				FC3B31AC2322EF1000FA66F0 /* RandomDude.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -115,6 +124,22 @@
 				FC3B31672321895000FA66F0 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC3B31AB2322E46500FA66F0 /* Detail View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B31A92322E46100FA66F0 /* PokeDetailViewController.swift */,
+			);
+			path = "Detail View Controllers";
+			sourceTree = "<group>";
+		};
+		FC3B31B02322F23100FA66F0 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B31AE2322F22B00FA66F0 /* RandomDudeTableViewCell.swift */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,10 +215,13 @@
 			files = (
 				FC3B317323218C3100FA66F0 /* AppError.swift in Sources */,
 				FC3B317823218E2700FA66F0 /* XKCD.swift in Sources */,
+				FC3B31AF2322F22B00FA66F0 /* RandomDudeTableViewCell.swift in Sources */,
 				FC3B317523218C6100FA66F0 /* ImageHelper.swift in Sources */,
 				FC3B317D2321A66D00FA66F0 /* RandomDudeViewController.swift in Sources */,
 				FC3B31812321B44100FA66F0 /* Poke.swift in Sources */,
 				FC3B317B2321A65E00FA66F0 /* PokemonViewController.swift in Sources */,
+				FC3B31AD2322EF1000FA66F0 /* RandomDude.swift in Sources */,
+				FC3B31AA2322E46200FA66F0 /* PokeDetailViewController.swift in Sources */,
 				FC3B317123218BF100FA66F0 /* NetworkManager.swift in Sources */,
 				FC3B31612321894C00FA66F0 /* ViewController.swift in Sources */,
 				FC3B315F2321894C00FA66F0 /* AppDelegate.swift in Sources */,

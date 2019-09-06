@@ -20,7 +20,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var comicNumberLabel: UILabel!
     @IBOutlet weak var comicImageView: UIImageView!
     @IBOutlet weak var comicTextFieldOutlet: UITextField!
-    
     @IBOutlet weak var changeComicStepperOutlet: UIStepper!
     
     @IBAction func mostRecentComicButton(_ sender: UIButton) {
@@ -79,6 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func loadCustomData(sender: Int) {
+        changeComicStepperOutlet.value = Double(sender)
         XKCD.getXKCDData(comicNum: sender) { (result) in
             DispatchQueue.main.async {
                 switch result {
