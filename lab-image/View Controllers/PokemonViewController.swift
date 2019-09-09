@@ -62,7 +62,7 @@ extension PokemonViewController: UITableViewDataSource, UITableViewDelegate, UIS
         let onePoke = pokemons[indexPath.row]
         let cell = pokeTableView.dequeueReusableCell(withIdentifier: "pokeCell", for: indexPath)
         
-        ImageHelper.shared.fetchImage(urlString: onePoke.imageUrlHiRes) { (result) in
+        ImageHelper.shared.fetchImage(urlString: onePoke.imageUrl) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):

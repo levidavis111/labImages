@@ -22,6 +22,7 @@
 		FC3B31AA2322E46200FA66F0 /* PokeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31A92322E46100FA66F0 /* PokeDetailViewController.swift */; };
 		FC3B31AD2322EF1000FA66F0 /* RandomDude.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31AC2322EF1000FA66F0 /* RandomDude.swift */; };
 		FC3B31AF2322F22B00FA66F0 /* RandomDudeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31AE2322F22B00FA66F0 /* RandomDudeTableViewCell.swift */; };
+		FC3B31B2232307B700FA66F0 /* RandomDudeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B31B1232307B700FA66F0 /* RandomDudeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FC3B31A92322E46100FA66F0 /* PokeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDetailViewController.swift; sourceTree = "<group>"; };
 		FC3B31AC2322EF1000FA66F0 /* RandomDude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDude.swift; sourceTree = "<group>"; };
 		FC3B31AE2322F22B00FA66F0 /* RandomDudeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDudeTableViewCell.swift; sourceTree = "<group>"; };
+		FC3B31B1232307B700FA66F0 /* RandomDudeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDudeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				FC3B31A92322E46100FA66F0 /* PokeDetailViewController.swift */,
+				FC3B31B1232307B700FA66F0 /* RandomDudeDetailViewController.swift */,
 			);
 			path = "Detail View Controllers";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				FC3B317823218E2700FA66F0 /* XKCD.swift in Sources */,
 				FC3B31AF2322F22B00FA66F0 /* RandomDudeTableViewCell.swift in Sources */,
 				FC3B317523218C6100FA66F0 /* ImageHelper.swift in Sources */,
+				FC3B31B2232307B700FA66F0 /* RandomDudeDetailViewController.swift in Sources */,
 				FC3B317D2321A66D00FA66F0 /* RandomDudeViewController.swift in Sources */,
 				FC3B31812321B44100FA66F0 /* Poke.swift in Sources */,
 				FC3B317B2321A65E00FA66F0 /* PokemonViewController.swift in Sources */,

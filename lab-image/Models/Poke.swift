@@ -13,6 +13,7 @@ struct Poke:Codable {
     
     struct Pokemon: Codable {
         let name: String
+        let imageUrl: String
         let imageUrlHiRes: String
         let types: [String]?
         let weaknesses: [WeaknessWrapper]?
@@ -27,7 +28,7 @@ struct Poke:Codable {
     }
     
     static func getPokeData(completionHandler: @escaping (Result<[Pokemon],AppError>) -> () ) {
-        let url = "https://api.pokemontcg.io/v1/cards"
+        let url = "https://api.pokemontcg.io/v1/cards/"
         NetworkManager.shared.fetchData(urlString: url) { (result) in
             switch result {
             case .failure(let error):

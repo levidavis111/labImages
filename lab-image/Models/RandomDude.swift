@@ -36,8 +36,10 @@ struct RandomDude: Codable {
    
         let name: NameWrapper
         let dob: AgeWrapper
+        let phone: String
+        let location: LocationWrapper
         let cell: String
-    let picture: PictureWrapper
+        let picture: PictureWrapper
         var fullName: String {get {
             return "\(String(describing: name.first)) \(String(describing: name.last))"
             }
@@ -56,6 +58,12 @@ struct RandomDude: Codable {
     
     struct PictureWrapper: Codable {
         let thumbnail: String
+        let large: String
+    }
+    struct LocationWrapper: Codable {
+        let street: String
+        let city: String
+        let state: String
     }
     
 }

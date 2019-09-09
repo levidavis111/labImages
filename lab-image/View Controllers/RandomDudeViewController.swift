@@ -18,6 +18,15 @@ class RandomDudeViewController: UIViewController {
     
     @IBOutlet weak var randomDudeTableView: UITableView!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is RandomDudeDetailViewController {
+            guard let indexPath = randomDudeTableView.indexPathForSelectedRow,
+                let randomDudeVC = segue.destination as? RandomDudeDetailViewController else {return}
+            let oneDude = randomDudes[indexPath.row]
+            randomDudeVC.oneDude = oneDude
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         randomDudeTableView.delegate = self
